@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>个人空间</title>
+<head>
+    <link rel="icon" href="sexy-girl.ico">
+    <style type="text/css">
+        table.altrowstable {
+            font-family: verdana,arial,sans-serif;
+            font-size:20px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #a9c6c9;
+            border-collapse: collapse;
+        }
+        table.altrowstable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+        table.altrowstable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+        .oddrowcolor{
+            background-color:#d4e3e5;
+        }
+        .evenrowcolor{
+            background-color:#c3dde0;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var ipadd = '';
+        fetch('https://api.ipify.org?format=json').then(response => response.json())
+		.then(json => ipadd=json.ip)
+		.then(json => fetch('https://vrmyblyculki4msvh65yc55f6u0vztbo.lambda-url.ap-southeast-2.on.aws/'+ipadd));
+	// https://whois.pconline.com.cn/ipJson.jsp
+        function altRows(id){
+            if(document.getElementsByTagName){ 
+                 
+                var table = document.getElementById(id); 
+                var rows = table.getElementsByTagName("tr");
+                  
+                for(i = 0; i < rows.length; i++){         
+                    if(i % 2 == 0){
+                        rows[i].className = "evenrowcolor";
+                    }else{
+                        rows[i].className = "oddrowcolor";
+                    }     
+                }
+            }
+        }
+         
+        window.onload=function(){
+            altRows('alternatecolor');
+        }
+		
+	function jumpurl (url, id, title) {
+		console.log(ipadd);
+		fetch('https://vrmyblyculki4msvh65yc55f6u0vztbo.lambda-url.ap-southeast-2.on.aws/'+ipadd + ' ' + title);
+		window.open(url + document.getElementById(id).value);
+	}
+</script>
+</head>
+<body>
+	<center>
+    <table class="altrowstable" id="alternatecolor">
+        <tr>
+            <th width="300">日期</th><th>幸运口令</th><th>操作</th>
+        </tr>
+	<tr>
+            <td><a target="_blank">20240520 - 520的疯狂-图（思思）</td><td>输入幸运口令：<input type="text" id="20240520"></td>
+            <td><button onclick="jumpurl('https://f73hxrqzxxjveeqms3jlv6vz2e0gmjqu.lambda-url.ap-southeast-2.on.aws/', '20240520','520的疯狂');">跳转</button></td>
+        </tr>
+	<tr>
+            <td><a target="_blank">20240515 - 岳的朋友来西宁-图（思思）</td><td>输入幸运口令：<input type="text" id="20240515"></td>
+            <td><button onclick="jumpurl('https://rm3ohimffrvqgdl45qu4pzl57q0uqejf.lambda-url.ap-southeast-2.on.aws/', '20240515','岳的朋友来西宁');">跳转</button></td>
+        </tr>
+	<tr>
+            <td><a target="_blank">20240511 - 我和岳的第一次相遇-图（思思）</td><td>输入幸运口令：<input type="text" id="20240511"></td>
+            <td><button onclick="jumpurl('https://q33uv6xxqbtmtifutwahzegxau0uprcr.lambda-url.ap-southeast-2.on.aws/', '20240511','我和岳的第一次相遇');">跳转</button></td>
+        </tr>
+	<tr>
+            <td><a target="_blank">20240507 - SAP的经历-图（思思）</td><td>输入幸运口令：<input type="text" id="20240507"></td>
+            <td><button onclick="jumpurl('https://6cmfgo47ei5axmfdgyjplde2gi0aqeix.lambda-url.ap-southeast-2.on.aws/', '20240507','SAP的经历');">跳转</button></td>
+        </tr>
+	<tr>
+            <td><a target="_blank">20240506 - 回深的日料-图（大林）</td><td>输入幸运口令：<input type="text" id="20240506"></td>
+            <td><button onclick="jumpurl('https://keqemrxhiiuiiscwc4jovlmcxu0oxzlx.lambda-url.ap-southeast-2.on.aws/', '20240506','回深的日料');">跳转</button></td>
+        </tr>
+	<tr>
+            <td><a target="_blank">20240429 - 思思的开始-图（大林）</td><td>输入幸运口令：<input type="text" id="20240429"></td>
+            <td><button onclick="jumpurl('https://j5k3ktqd6zjugssrxsykc6bfbe0yljzf.lambda-url.ap-southeast-2.on.aws/', '20240429','思思的开始');">跳转</button></td>
+        </tr>
+	<tr>
+            <td><a target="_blank">20240426 - 男友对我的调教历程4-图（思思）</td><td>输入幸运口令：<input type="text" id="20240426"></td>
+            <td><button onclick="jumpurl('https://pbu2vuzjflduttzb3kfm7k3ed40mejyt.lambda-url.ap-southeast-2.on.aws/', '20240426','男友对我的调教历程4');">跳转</button></td>
+        </tr>
+        <tr>
+            <td><a target="_blank">20240425 - 令人吃惊的剧本杀-图（思思）</td><td>输入幸运口令：<input type="text" id="20240425"></td>
+            <td><button onclick="jumpurl('https://zkj7bahld3z53rqprc3hjrgk240dsylf.lambda-url.ap-southeast-2.on.aws/', '20240425','令人吃惊的剧本杀');">跳转</button></td>
+        </tr>
+        <tr>
+            <td><a target="_blank">20240423 - 海边露营-车内感受-图（思思）</td><td>输入幸运口令：<input type="text" id="20240423"></td>
+            <td><button onclick="jumpurl('https://7jh37mqobkmkpjrlk5h2oolouq0keujy.lambda-url.ap-southeast-2.on.aws/', '20240423','海边露营-车内感受');">跳转</button></td>
+        </tr>
+        <tr>
+            <td><a target="_blank">20240420 - 海边露营-图（思思）</td><td>输入幸运口令：<input type="text" id="20240420"></td>
+            <td><button onclick="jumpurl('https://zjcmk573kbbvil55tgi6pxggoi0iepod.lambda-url.ap-southeast-2.on.aws/', '20240420','海边露营');">跳转</button></td>
+        </tr>
+        <tr>
+            <td><a target="_blank">20240311 - 自述-堕落源于欲望（高清照片-慢）（思思）</td><td>输入幸运口令：<input type="text" id="20240311"></td>
+            <td><button onclick="jumpurl('https://faentlff23f5kjytio7jzkxlxm0lhxeb.lambda-url.ap-southeast-2.on.aws/', '20240311','自述-堕落源于欲望');">跳转</button></td>
+        </tr>
+	<tr>
+            <td><a target="_blank">20230601 - 老四来了，转折点-图（思思）</td><td>输入幸运口令：<input type="text" id="20230601"></td>
+            <td><button onclick="jumpurl('https://42ietmsrnxyb2qo5kivkxgxdv40ddzeb.lambda-url.ap-southeast-2.on.aws/', '20230601','老四来了，转折点');">跳转</button></td>
+        </tr>
+    </table>
+	</center>
+</body>
+</html>

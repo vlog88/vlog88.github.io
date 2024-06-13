@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Mac系统小技巧</title>
+<head>
+    <link rel="icon" href="sexy-girl.ico">
+    <style type="text/css">
+	#autoWidthTextarea {
+	  width: 88%;
+	  min-width: 200px; /* 设置一个最小宽度 */
+	  height: 100px; /* 让高度根据内容自适应 */
+	}
+	.green-button {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 10px 20px;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+    </style>
+    <script type="text/javascript">
+	var ipadd = '';
+	fetch('https://api.ipify.org?format=json').then(response => response.json()).then(json => ipadd=json.ip);
+	function sentMessage (parentmsg) {
+		fetch('https://7m6zw7kxdmlqlqczqwbpxptnzu0xrhfr.lambda-url.ap-southeast-2.on.aws/' + ipadd + '/' + document.title + '/' + document.getElementById("autoWidthTextarea").value);
+		document.getElementById("autoWidthTextarea").value = "";
+		alert('留言成功！');
+	}
+    </script>
+</head>
+<body>
+<center>
+	<table border="1">
+		<tbody>
+			<tr>
+				<td bgcolor="yellow">
+				<p>
+				<h2 style="color:red">一、为 Mac 追加【ls -l】命令</h2>
+          <pre>
+            编辑文件：
+            vim ~/.bash_profile
+
+            输入命令别名：
+            alias ll='ls -alF'
+            alias la='ls -A'
+            alias l='ls -CF
+
+            保存：
+            :wq
+
+            立即生效：
+            source ~/.bash_profile
+          </pre>
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="yellow">
+				<p>
+				<h2 style="color:red">二、为 Mac 安装 nginx</h2>
+          <pre>
+		安装nginx
+		brew install nginx
+		
+		查看安装信息
+		brew info nginx
+		
+		nginx常用命令
+		brew services start nginx
+		brew services restart nginx
+		brew services stop nginx
+		
+		服务地址
+		http://127.0.0.1:8080/
+		
+		创建软连接：
+		ln -s  /Users/cyril/Downloads/processing /usr/local/var/www/p
+          </pre>
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#c0ff8f">
+				<h2 style="color:red">意见板： 请留下您的意见 和 邮箱</h2>
+				<textarea id="autoWidthTextarea" ></textarea><br/>
+				<button class="green-button" onclick="sentMessage('');">留言</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</center>
+</body>
+</html>

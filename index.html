@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>不负青春年华</title>
+<head>
+    <link rel="icon" href="sexy-girl.ico">
+    <style type="text/css">
+	#autoWidthTextarea {
+	  width: 88%;
+	  min-width: 200px; /* 设置一个最小宽度 */
+	  height: 100px; /* 让高度根据内容自适应 */
+	}
+	.green-button {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 10px 20px;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+    </style>
+    <script type="text/javascript">
+	var ipadd = '';
+	fetch('https://api.ipify.org?format=json').then(response => response.json()).then(json => ipadd=json.ip);
+	function sentMessage (parentmsg) {
+		fetch('https://7m6zw7kxdmlqlqczqwbpxptnzu0xrhfr.lambda-url.ap-southeast-2.on.aws/' + ipadd + '/' + document.title + '/' + document.getElementById("autoWidthTextarea").value);
+		document.getElementById("autoWidthTextarea").value = "";
+		alert('留言成功！');
+	}
+    </script>
+</head>
+<body>
+<center>
+	<table border="1">
+		<tbody>
+			<tr>
+				<td align="center" bgcolor="#c0ff8f">
+					<div align="center">
+						<h3 style="color:red">
+							○<a href="./txt.html" target="_blank">记事本</a>&nbsp;&nbsp;
+							○<a href="./video.html" target="_blank">vlog</a>&nbsp;&nbsp;
+							○<a href="./journal.html" target="_blank">个人空间</a>&nbsp;&nbsp;
+							○<a href="./self_novel.html" target="_blank">网文</a>&nbsp;&nbsp;
+							○<a href="./mac.html" target="_blank">Mac小技巧</a>&nbsp;&nbsp;
+							<br>
+							○<a href="https://www.freeconvert.com/" target="_blank">图片格式转换</a>&nbsp;&nbsp;
+							○<a href="http://mima.wiicha.com/?cate=123&length=20&num=1&spaciel=&exclude_str=" target="_blank">生成密码</a>&nbsp;&nbsp;
+							○<a href="https://qifu.baidu.com/home" target="_blank">IP查询</a>&nbsp;&nbsp;
+							○<a href="https://www.sojson.com/image2base64.html" target="_blank">图片转base64</a>&nbsp;&nbsp;
+						</h3>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="yellow">
+				<p>
+				<h2 style="color:red">一、模特经验</h2>
+				1、有短视频拍摄经验（情景拍摄类、产品讲解类，口播类），内模，腿模，人体模特等经验；<br>
+				2、热爱各项拍摄、短视频，工作态度积极认真，具备良好的敬业精神；<br>
+				3、表现力与镜头感强，口齿清晰、性格开朗大方，愿意为艺术奉献。<br><br>
+				
+				<h2 style="color:red">二、促销经验</h2>
+				1、有3年大型促销经验；<br>
+				2、擅长手机，营养品，化妆品，内衣等促销；<br>
+				3、cosplay爱好者。<br><br>
+				
+				<h2 style="color:red">三、基本信息</h2>
+				2001年出生，169cm，58kg，C+，长相甜美，中发（自带多种风格假发）<br>
+				有意向请联系。<br><br>
+
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#c0ff8f">
+				<h2 style="color:red">意见板： 请留下您的意见 和 邮箱</h2>
+				<textarea id="autoWidthTextarea" ></textarea><br/>
+				<button class="green-button" onclick="sentMessage('');">留言</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</center>
+</body>
+</html>

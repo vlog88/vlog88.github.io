@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>不负青春年华</title>
+<head>
+    <link rel="icon" href="sexy-girl.ico">
+    <script type="text/javascript">
+	//下载图片事件
+	function downloadClick(canvas, id, img) {
+		//判断是否是IE
+		var fileName = 'testImg.jpg';
+		if (window.navigator.msSaveBlob) {
+			//支持IE10，IE11 ,Edage
+			var blob = canvas.msToBlob();
+			window.navigator.msSaveBlob(blob, fileName);
+		} else {
+			//下载图片,Goggle浏览器，火狐浏览器
+			//var dataImg = new Image()
+			//dataImg.crossOrigin=""
+			//dataImg.crossOrign="*" 
+			//dataImg.setAttribute("crossOrigin",'anonymous')
+			//dataImg.src = canvas.toDataURL('image/png')+'?v='+Math.random()
+			//document.querySelector('#'+id).appendChild(dataImg)
+			var alink = document.createElement("a");
+			alink.href = img.src;
+			alink.target='_blank'
+			alink.download = fileName;
+			alink.click();
+		}
+	}
+	async function drawWaterMarks(url, id) {
+		return new Promise((resolve, reject) => {
+			// 载入图片
+			let img = new Image();
+			//img.setAttribute("crossOrigin",'anonymous')
+			//img.crossOrigin='anonymous'
+			img.src = url;// 要绘制水印的图片
+			img.onload  = function ()  {
+				// 创建画布
+				const canvas = document.createElement("canvas");
+				document.body.appendChild(canvas);
+				imgWidth = img.width;
+				imgHeight = img.height;
+				canvas.id = "wm_" + id;
+				canvas.width  = imgWidth;
+				canvas.height = imgHeight;
+
+				let ctx = canvas.getContext('2d');
+				ctx.drawImage(img,0,0)
+				ctx.font = "bold 22px 'Fira Sans'";
+				ctx.fillStyle = 'red'; //水印颜色
+				// 绘制水印
+				ctx.fillText("xiaoyao36d@gmail.com", imgWidth - 266, imgHeight - 20);
+				downloadClick(canvas, "wm_" + id, img);
+			}
+		})
+	}
+	async function drawImg(url) {
+		return new Promise((resolve, reject) => {
+			// 载入图片
+			let img = new Image();
+			//img.setAttribute("crossOrigin",'anonymous')
+			//img.crossOrigin='anonymous'
+			img.src = url;// 要绘制水印的图片
+			img.onload  = function () {
+				// 创建画布
+				document.body.appendChild(document.createElement("hr"));
+				const canvas = document.createElement("canvas");
+				document.body.appendChild(canvas);
+				imgWidth = img.width;
+				imgHeight = img.height;
+				canvas.width  = imgWidth;
+				canvas.height = imgHeight;
+				let ctx = canvas.getContext('2d');
+				ctx.drawImage(img,0,0)
+			}
+		})
+	}
+	async function cutImg(url, id) {
+		// 载入图片
+		let img = new Image();
+		//img.setAttribute("crossOrigin",'anonymous')
+		//img.crossOrigin='anonymous'
+		img.src = url;// 要绘制水印的图片
+		img.onload  = function () {
+			// 创建画布
+			const canvas = document.createElement("canvas");
+			document.body.appendChild(canvas);
+			imgWidth = img.width;
+			imgHeight = img.height;
+			canvas.id = "ct_" + id;
+			canvas.width  = imgWidth;
+			canvas.height = imgHeight;
+			let ctx = canvas.getContext('2d');
+			let ct = 0;
+			ct = document.getElementById("ct").value;
+			ctx.drawImage(img, 0, 0, imgWidth, imgHeight - ct, 0, 0, imgWidth, imgHeight - ct);
+			downloadClick(canvas, "ct_" + id);
+		}
+	}
+	async function subadd(url, id)  {
+		//document.body.appendChild(document.createElement("hr"));
+		drawImg(url);
+		drawWaterMarks(url, id);
+	}
+	async function subcut(url, id)  {
+		//document.body.appendChild(document.createElement("hr"));
+		drawImg(url);
+		cutImg(url, id);
+	}
+	function add() {
+		clearCanvas();
+		// https://s2.51cto.com/images/202203/195f76d50ffb2cd8b16664147e48ea8edd9fd6.png
+		let urls = document.getElementById("textareatt").value.split(/[\s\n]/);
+		for (var i = 0; i < urls.length; i++) {
+			subadd(urls[i], i+1)
+		}
+	}
+	function cut() {
+		clearCanvas();
+		// https://s2.51cto.com/images/202203/195f76d50ffb2cd8b16664147e48ea8edd9fd6.png
+		let urls = document.getElementById("textareatt").value.split(/[\s\n]/);
+		for (var i = 0; i < urls.length; i++) {
+			subcut(urls[i], i+1)
+		}
+	}
+	function clearCanvas() {
+		let tags = document.getElementsByTagName("canvas");
+		for (var i = 0; 0 < tags.length; i++) {
+			tags[0].remove();
+		}
+	}
+	</script>
+</head>
+<body>
+<div align="center">
+<input id= "ct" value="40"></input>
+<textarea id="textareatt" rows=10 cols=50></textarea>
+<button onclick="cut()">cut</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="add()">add mark</button>
+</div>
+<hr>
+</body>
+</html>

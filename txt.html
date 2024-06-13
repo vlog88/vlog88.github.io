@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>笔记本</title>
+<head>
+    <link rel="icon" href="sexy-girl.ico">
+    <style type="text/css">
+        table.altrowstable {
+            font-family: verdana,arial,sans-serif;
+            font-size:20px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #a9c6c9;
+            border-collapse: collapse;
+        }
+        table.altrowstable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+        table.altrowstable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #a9c6c9;
+        }
+        .oddrowcolor{
+            background-color:#d4e3e5;
+        }
+        .evenrowcolor{
+            background-color:#c3dde0;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var ipadd = '';
+        fetch('https://api.ipify.org?format=json').then(response => response.json())
+		.then(json => ipadd=json.ip)
+		.then(json => fetch('https://vrmyblyculki4msvh65yc55f6u0vztbo.lambda-url.ap-southeast-2.on.aws/'+ipadd));
+	// https://whois.pconline.com.cn/ipJson.jsp
+        function altRows(id){
+            if(document.getElementsByTagName){ 
+                 
+                var table = document.getElementById(id); 
+                var rows = table.getElementsByTagName("tr");
+                  
+                for(i = 0; i < rows.length; i++){         
+                    if(i % 2 == 0){
+                        rows[i].className = "evenrowcolor";
+                    }else{
+                        rows[i].className = "oddrowcolor";
+                    }     
+                }
+            }
+        }
+         
+        window.onload=function(){
+            altRows('alternatecolor');
+        }
+		
+	function jumpurl (url, id, title) {
+		console.log(ipadd);
+		fetch('https://vrmyblyculki4msvh65yc55f6u0vztbo.lambda-url.ap-southeast-2.on.aws/'+ipadd + ' ' + title);
+		window.open(url + document.getElementById(id).value);
+	}
+</script>
+</head>
+<body>
+	<center>
+    <table class="altrowstable" id="alternatecolor">
+        <tr>
+            <th width="300">日期</th><th>幸运口令</th><th>操作</th>
+        </tr>
+		<tr>
+            <td><a target="_blank">【置顶】2021 - 自媒体订单</td><td>输入幸运口令：<input type="text" id="2021"></td>
+            <td><button onclick="jumpurl('https://dvviz5vkgjbtyc6h26ltxdiqri0nbmqp.lambda-url.ap-southeast-2.on.aws/', '2021','自媒体订单');">跳转</button></td>
+        </tr>
+    </table>
+	</center>
+</body>
+</html>
