@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>如何学习人工智能</title>
+<head>
+    <link rel="icon" href="sexy-girl.ico">
+    <style type="text/css">
+	#autoWidthTextarea {
+	  width: 88%;
+	  min-width: 200px; /* 设置一个最小宽度 */
+	  height: 100px; /* 让高度根据内容自适应 */
+	}
+	.green-button {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 10px 20px;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+    </style>
+    <script type="text/javascript">
+	var ipadd = '';
+	fetch('https://api.ipify.org?format=json').then(response => response.json()).then(json => ipadd=json.ip);
+	function sentMessage (parentmsg) {
+		fetch('https://7m6zw7kxdmlqlqczqwbpxptnzu0xrhfr.lambda-url.ap-southeast-2.on.aws/' + ipadd + '/' + document.title + '/' + document.getElementById("autoWidthTextarea").value);
+		document.getElementById("autoWidthTextarea").value = "";
+		alert('留言成功！');
+	}
+    </script>
+</head>
+<body>
+<center>
+	<table border="1">
+		<tbody>
+			<tr>
+				<td bgcolor="yellow">
+				<p>
+				<h2 style="color:red">一、访问 chart gpt </h2>
+          <pre>
+		访问： <a href="https://chatgpt.com/" target="blank">https://chatgpt.com/</a>
+		
+		按照说明进行注册，就可以开始你的学习之旅了。 
+		
+		因老美为了技术领先，限制亚洲地区使用，所以我们需要参照下面方法，改变手机的位置为美国即可。
+          </pre>
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="yellow">
+				<p>
+				<h2 style="color:red">二、改变自己手机所在地</h2>
+          <pre>
+		苹果手机下载：<a href="http://mgjs.vip/ios/3bgux" target="blank">http://mgjs.vip/ios/3bgux</a>
+
+		安卓手机下载：<a href="http://mgjs.vip/az/3bgux" target="blank">http://mgjs.vip/az/3bgux</a>
+
+		官网下载：<a href="http://mgjs.vip/3bgux" target="blank">http://mgjs.vip/3bgux</a>
+		
+		PC版下载：<a href="http://mgjs.vip/pc/3bgux" target="blank">http://mgjs.vip/pc/3bgux</a>
+          </pre>
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" bgcolor="#c0ff8f">
+				<h2 style="color:red">意见板： 请留下您的意见 和 邮箱</h2>
+				<textarea id="autoWidthTextarea" ></textarea><br/>
+				<button class="green-button" onclick="sentMessage('');">留言</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</center>
+</body>
+</html>
